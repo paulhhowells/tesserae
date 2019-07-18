@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>tesserae demonstration</title>
+		<style>
+			html, body {
+				margin: 0; padding: 0; font-family: sans-serif;
+			}
+			html { background: transparent; }
+			body { background: #222; }
+
+			h1 {
+				display: inline-block;
+				padding: 1rem;
+				font-size: 3em;
+				font-weight: 700;
+				letter-spacing: -0.05em;
+				color: #fff;
+				text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+				word-break: break-all;
+				hyphens: auto;
+				background: #2227;
+			}
+
+			#graphic {
+				z-index: -1;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 100vw;
+				height: 50vh;
+				background: #B11;
+			}
+
+			#graphic svg {
+				background: #eee;
+			}
+
+			#wrapper {
+				background: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="graphic"></div>
+		<div id="wrapper">
+			<h1>tesserae demonstration</h1>
+		</div>
+		<script type="module">
+			import initialise from './tesserae.js';
+
+			document.addEventListener('DOMContentLoaded', function () {
+				const viewportWidth = window.outerWidth;
+				const viewportHeight = window.outerHeight;
+				const graphic = document.getElementById('graphic');
+
+				initialise(window, document, graphic);
+			});
+		</script>
+	</body>
+</html>
